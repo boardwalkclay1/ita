@@ -3,14 +3,20 @@
   "short_name": "Arborist Garden",
   "description": "A bilingual learning garden designed to help Ita study for her arborist certification with gentle lessons, quizzes, and beautiful nature-inspired visuals.",
   "start_url": "/pages/index.html",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#050b08",
   "theme_color": "#ff6b9c",
+  "categories": ["education", "learning", "arborist", "nature", "training"],
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/public/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "sizes": "16x16 24x24 32x32 64x64",
+      "type": "image/x-icon",
+      "purpose": "any"
     }
   ]
 }
