@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title data-i18n="sg_title">Arborist Study Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/public/favicon.ico" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    body {
+      background: url("/assets/img/ita-index.jpg") center/cover fixed no-repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 156, 0.35), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.35), transparent 60%),
+        rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: 0;
+    }
+
+    .study-shell {
+      display: flex;
+      backdrop-filter: blur(14px) saturate(1.25);
+      background: rgba(10, 20, 15, 0.78);
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      padding: 20px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #ffb347;
+    }
+
+    .nav-section {
+      margin-bottom: 18px;
+    }
+
+    .nav-section button {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #ff6b9c;
+      font-size: 15px;
+      text-align: left;
+      padding: 6px 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .nav-sub {
+      margin-left: 12px;
+      margin-top: 6px;
+    }
+
+    .nav-sub a {
+      display: block;
+      color: #d7e7dd;
+      text-decoration: none;
+      padding: 4px 0;
+      font-size: 14px;
+    }
+
+    .nav-sub a:hover {
+      color: #ffb347;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .content h1 {
+      font-size: 28px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      color: #ffb347;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      color: #ff6b9c;
+      margin-top: 20px;
+    }
+
+    .content p, .content li {
+      color: #d7e7dd;
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="study-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2 data-i18n="sg_nav">Study Guide Navigation</h2>
+
+      <div class="nav-section">
+        <button>🌱 Tree Biology</button>
+        <div class="nav-sub">
+          <a href="#bio-structure">Tree Structure</a>
+          <a href="#bio-growth">Growth & Physiology</a>
+          <a href="#bio-health">Tree Health</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>✂️ Pruning</button>
+        <div class="nav-sub">
+          <a href="#prune-types">Types of Pruning</a>
+          <a href="#prune-techniques">Cutting Techniques</a>
+          <a href="#prune-timing">Timing</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🪢 Climbing & Rigging</button>
+        <div class="nav-sub">
+          <a href="#climb-gear">Gear</a>
+          <a href="#climb-tech">Climbing Techniques</a>
+          <a href="#rigging">Rigging Systems</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🪓 Safety & PPE</button>
+        <div class="nav-sub">
+          <a href="#safety-ppe">PPE</a>
+          <a href="#safety-chainsaw">Chainsaw Safety</a>
+          <a href="#safety-jobsite">Jobsite Safety</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🌳 Tree ID</button>
+        <div class="nav-sub">
+          <a href="#id-leaves">Leaves</a>
+          <a href="#id-bark">Bark</a>
+          <a href="#id-form">Growth Form</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🧪 Soil Science</button>
+        <div class="nav-sub">
+          <a href="#soil-types">Soil Types</a>
+          <a href="#soil-chem">Chemistry</a>
+          <a href="#soil-water">Water Movement</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🐛 Pests & Diseases</button>
+        <div class="nav-sub">
+          <a href="#pests-insects">Insects</a>
+          <a href="#pests-disease">Diseases</a>
+          <a href="#pests-management">Management</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>⚖️ Risk Assessment</button>
+        <div class="nav-sub">
+          <a href="#risk-structure">Structural Defects</a>
+          <a href="#risk-targets">Targets</a>
+          <a href="#risk-mitigation">Mitigation</a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>📜 Regulations & Ethics</button>
+        <div class="nav-sub">
+          <a href="#regs-laws">Laws</a>
+          <a href="#regs-ethics">Ethics</a>
+          <a href="#regs-best">Best Practices</a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+      <h1 data-i18n="sg_header">Arborist Certification Study Guide</h1>
+
+      <!-- TREE BIOLOGY -->
+      <h2 id="bio-structure">🌱 Tree Structure</h2>
+      <p>The three major structural zones of a tree are the roots, trunk, and crown. Each plays a critical role in stability, nutrient movement, and energy production.</p>
+
+      <h3>Root System</h3>
+      <ul>
+        <li>Absorbs water and nutrients</li>
+        <li>Provides anchorage</li>
+        <li>Most roots are in the top 18 inches of soil</li>
+        <li>Mycorrhizae increase nutrient uptake</li>
+      </ul>
+
+      <h3>Trunk & Vascular System</h3>
+      <ul>
+        <li>Xylem moves water upward</li>
+        <li>Phloem moves sugars downward</li>
+        <li>Heartwood provides strength</li>
+      </ul>
+
+      <h3>Crown</h3>
+      <ul>
+        <li>Leaves perform photosynthesis</li>
+        <li>Branches distribute weight</li>
+        <li>Bud arrangement helps identify species</li>
+      </ul>
+
+      <!-- GROWTH -->
+      <h2 id="bio-growth">🌿 Growth & Physiology</h2>
+      <p>Trees grow through primary (height) and secondary (diameter) growth. Hormones regulate responses to light, gravity, and injury.</p>
+
+      <h3>Photosynthesis</h3>
+      <ul>
+        <li>Requires sunlight, CO₂, and water</li>
+        <li>Produces sugars for growth</li>
+      </ul>
+
+      <h3>Respiration</h3>
+      <ul>
+        <li>Breaks down sugars for energy</li>
+        <li>Occurs day and night</li>
+      </ul>
+
+      <h3>Transpiration</h3>
+      <ul>
+        <li>Water evaporates from leaves</li>
+        <li>Creates suction that pulls water upward</li>
+      </ul>
+
+      <!-- HEALTH -->
+      <h2 id="bio-health">🌳 Tree Health</h2>
+      <p>Tree health depends on soil quality, water availability, proper pruning, and protection from pests and diseases.</p>
+
+      <!-- PRUNING -->
+      <h2 id="prune-types">✂️ Types of Pruning</h2>
+      <ul>
+        <li>Crown cleaning</li>
+        <li>Crown thinning</li>
+        <li>Crown raising</li>
+        <li>Crown reduction</li>
+      </ul>
+
+      <h2 id="prune-techniques">🔪 Cutting Techniques</h2>
+      <ul>
+        <li>3‑cut method</li>
+        <li>Cut outside the branch collar</li>
+        <li>Never flush cut</li>
+      </ul>
+
+      <h2 id="prune-timing">🗓 Best Timing</h2>
+      <ul>
+        <li>Most pruning: dormant season</li>
+        <li>Flowering trees: after bloom</li>
+      </ul>
+
+      <!-- CLIMBING -->
+      <h2 id="climb-gear">🪢 Climbing Gear</h2>
+      <ul>
+        <li>Saddle</li>
+        <li>Climbing line</li>
+        <li>Flipline</li>
+        <li>Carabiners</li>
+        <li>Ascenders & descenders</li>
+      </ul>
+
+      <h2 id="climb-tech">🧗 Climbing Techniques</h2>
+      <ul>
+        <li>Footlocking</li>
+        <li>Body thrust</li>
+        <li>SRT & DRT systems</li>
+      </ul>
+
+      <h2 id="rigging">⚙️ Rigging Systems</h2>
+      <ul>
+        <li>Blocks & pulleys</li>
+        <li>Friction devices</li>
+        <li>Load control</li>
+      </ul>
+
+      <!-- SAFETY -->
+      <h2 id="safety-ppe">🪖 PPE</h2>
+      <ul>
+        <li>Helmet</li>
+        <li>Eye protection</li>
+        <li>Hearing protection</li>
+        <li>Chainsaw chaps</li>
+      </ul>
+
+      <h2 id="safety-chainsaw">🪓 Chainsaw Safety</h2>
+      <ul>
+        <li>Two‑handed grip</li>
+        <li>Kickback zone awareness</li>
+        <li>Chain brake use</li>
+      </ul>
+
+      <h2 id="safety-jobsite">🚧 Jobsite Safety</h2>
+      <ul>
+        <li>Communication</li>
+        <li>Drop zones</li>
+        <li>Traffic control</li>
+      </ul>
+
+      <!-- TREE ID -->
+      <h2 id="id-leaves">🍃 Leaf Identification</h2>
+      <ul>
+        <li>Simple vs compound</li>
+        <li>Opposite vs alternate</li>
+        <li>Margins: serrated, lobed, entire</li>
+      </ul>
+
+      <h2 id="id-bark">🌲 Bark Identification</h2>
+      <ul>
+        <li>Color</li>
+        <li>Texture</li>
+        <li>Pattern</li>
+      </ul>
+
+      <h2 id="id-form">🌳 Growth Form</h2>
+      <ul>
+        <li>Columnar</li>
+        <li>Vase‑shaped</li>
+        <li>Weeping</li>
+      </ul>
+
+      <!-- SOIL -->
+      <h2 id="soil-types">🧱 Soil Types</h2>
+      <ul>
+        <li>Sand</li>
+        <li>Silt</li>
+        <li>Clay</li>
+        <li>Loam</li>
+      </ul>
+
+      <h2 id="soil-chem">🧪 Soil Chemistry</h2>
+      <ul>
+        <li>pH</li>
+        <li>Nutrient availability</li>
+        <li>Cation exchange capacity</li>
+      </ul>
+
+      <h2 id="soil-water">💧 Water Movement</h2>
+      <ul>
+        <li>Infiltration</li>
+        <li>Percolation</li>
+        <li>Drainage</li>
+      </ul>
+
+      <!-- PESTS -->
+      <h2 id="pests-insects">🐛 Insects</h2>
+      <ul>
+        <li>Borers</li>
+        <li>Aphids</li>
+        <li>Scale</li>
+      </ul>
+
+      <h2 id="pests-disease">🦠 Diseases</h2>
+      <ul>
+        <li>Fungal</li>
+        <li>Bacterial</li>
+        <li>Viral</li>
+      </ul>
+
+      <h2 id="pests-management">🧰 Management</h2>
+      <ul>
+        <li>IPM strategies</li>
+        <li>Monitoring</li>
+        <li>Thresholds</li>
+      </ul>
+
+      <!-- RISK -->
+      <h2 id="risk-structure">⚠️ Structural Defects</h2>
+      <ul>
+        <li>Cracks</li>
+        <li>Included bark</li>
+        <li>Decay</li>
+      </ul>
+
+      <h2 id="risk-targets">🎯 Targets</h2>
+      <ul>
+        <li>People</li>
+        <li>Property</li>
+        <li>Infrastructure</li>
+      </ul>
+
+      <h2 id="risk-mitigation">🛠 Mitigation</h2>
+      <ul>
+        <li>Pruning</li>
+        <li>Cabling & bracing</li>
+        <li>Removal</li>
+      </ul>
+
+      <!-- REGULATIONS -->
+      <h2 id="regs-laws">📜 Laws</h2>
+      <ul>
+        <li>Local tree ordinances</li>
+        <li>Protected species</li>
+        <li>Permit requirements</li>
+      </ul>
+
+      <h2 id="regs-ethics">🤝 Ethics</h2>
+      <ul>
+        <li>Honesty with clients</li>
+        <li>Tree preservation first</li>
+        <li>Safety over profit</li>
+      </ul>
+
+      <h2 id="regs-best">🏆 Best Practices</h2>
+      <ul>
+        <li>ANSI A300 standards</li>
+        <li>ISA Code of Ethics</li>
+        <li>Industry consensus</li>
+      </ul>
+
+    </main>
+  </div>
+
+  <script src="/assets/js/language.js"></script>
+</body>
+</html>
