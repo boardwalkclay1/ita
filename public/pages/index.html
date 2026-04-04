@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ita’s Arborist Garden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/public/favicon.ico" />
+  <link rel="manifest" href="/public/manifest.json" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-icon">🌹</div>
+        <div>
+          <div class="brand-text-main" data-i18n="app_title">Ita’s Arborist Garden</div>
+          <div class="brand-text-sub" data-i18n="app_subtitle">
+            Short lessons, gentle quizzes, and a growing forest of knowledge.
+          </div>
+        </div>
+      </div>
 
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main class="app-content">
+      <!-- Left: Lesson + quiz -->
+      <section class="card">
+        <div class="card-inner">
+          <div class="card-title">
+            <span data-i18n="lesson1_title">Lesson 1 · Tree Biology Basics</span>
+            <span class="card-pill">🌳 Core</span>
+          </div>
+          <div class="card-subtitle" data-i18n="lesson1_subtitle">
+            Understanding how trees live, breathe, and grow.
+          </div>
+
+          <div class="lesson-text">
+            <p data-i18n="lesson1_text">
+              An arborist must understand how trees function: roots absorb water and nutrients, the trunk transports
+              them, and leaves use sunlight to create energy. Healthy structure and proper growth are the foundation
+              of safe tree work.
+            </p>
+            <p class="lesson-highlight" data-i18n="lesson1_highlight">
+              Roots, trunk, and crown must all be evaluated before any pruning or climbing.
+            </p>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;" />
+
+          <form class="quiz" data-quiz-id="lesson1" data-correct="roots">
+            <div class="quiz-question" data-i18n="quiz1_question">
+              Which part of the tree is mainly responsible for absorbing water and nutrients?
+            </div>
+
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="quiz1" value="crown" />
+                <span data-i18n="quiz1_opt1">The crown (leaves and branches)</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="quiz1" value="trunk" />
+                <span data-i18n="quiz1_opt2">The trunk</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="quiz1" value="roots" />
+                <span data-i18n="quiz1_opt3">The roots</span>
+              </label>
+            </div>
+
+            <div class="quiz-actions">
+              <button type="submit" class="btn-primary">
+                ✓ Quiz
+              </button>
+              <div class="quiz-feedback" data-quiz-feedback>
+                <!-- feedback text -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Right: progress + garden visual -->
+      <aside class="card">
+        <div class="card-inner progress-card">
+          <div class="progress-header">
+            <span data-i18n="progress_label">Certification path</span>
+            <span data-i18n="progress_value">Lesson 1 of 20</span>
+          </div>
+
+          <div class="progress-badge">
+            🌱 <span data-i18n="progress_badge">Growing knowledge</span>
+          </div>
+
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner"></div>
+          </div>
+
+          <div class="garden-visual">
+            <div class="garden-stem">
+              <div class="garden-bloom"></div>
+            </div>
+            <div class="garden-stem">
+              <div class="garden-bloom"></div>
+            </div>
+            <div class="garden-stem">
+              <div class="garden-bloom"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <span data-i18n="footer_left">
+        Made with care for Ita’s arborist journey.
+      </span>
+      <a href="/pages/lesson1.html" data-i18n="footer_right">
+        Next lesson →
+      </a>
+    </footer>
+  </div>
+
+  <script src="/assets/js/language.js"></script>
+  <script src="/assets/js/quiz.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/public/service-worker.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>
