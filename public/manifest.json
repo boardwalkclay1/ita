@@ -1,6 +1,7 @@
 {
   "name": "Ita’s Arborist Garden",
   "short_name": "Arborist Garden",
+  "description": "A bilingual learning garden designed to help Ita study for her arborist certification with gentle lessons, quizzes, and beautiful nature-inspired visuals.",
   "start_url": "/pages/index.html",
   "display": "standalone",
   "background_color": "#050b08",
