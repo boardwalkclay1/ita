@@ -4,8 +4,30 @@
   <meta charset="UTF-8" />
   <title>Ita’s Arborist Garden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Favicon + Manifest -->
   <link rel="icon" href="/public/favicon.ico" />
   <link rel="manifest" href="/public/manifest.json" />
+
+  <!-- Social Preview -->
+  <meta property="og:title" content="Ita’s Arborist Garden" />
+  <meta property="og:description" content="A beautiful bilingual learning garden to help Ita study for her arborist certification with short lessons, quizzes, and nature-inspired visuals." />
+  <meta property="og:image" content="/public/favicon.ico" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ita-3wf.pages.dev/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ita’s Arborist Garden" />
+  <meta name="twitter:description" content="A bilingual arborist study garden with lessons, quizzes, and nature visuals." />
+  <meta name="twitter:image" content="/public/favicon.ico" />
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Arborist Garden" />
+  <link rel="apple-touch-icon" href="/public/favicon.ico" />
+
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
@@ -14,7 +36,6 @@
       position: relative;
     }
 
-    /* Soft rose + fruit glow overlay */
     body::before {
       content: "";
       position: fixed;
@@ -28,22 +49,53 @@
     }
 
     .app-shell {
-      backdrop-filter: blur(12px) saturate(1.25);
-      background: rgba(10, 20, 15, 0.72);
+      backdrop-filter: blur(14px) saturate(1.25);
+      background: rgba(10, 20, 15, 0.78);
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
-    .brand-icon {
-      background:
-        radial-gradient(circle at 30% 20%, #ff6b9c, transparent 60%),
-        radial-gradient(circle at 70% 80%, #ffb347, transparent 60%),
-        rgba(255, 255, 255, 0.15);
+    .hero-title {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .garden-bloom {
-      background:
-        radial-gradient(circle at 30% 20%, #ff6b9c, transparent 60%),
-        radial-gradient(circle at 70% 80%, #ffb347, transparent 60%);
-      box-shadow: 0 0 12px rgba(255, 107, 156, 0.6);
+    .hero-sub {
+      text-align: center;
+      font-size: 15px;
+      color: #d7e7dd;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      line-height: 1.55;
+    }
+
+    .start-btn {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 12px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      color: #050806;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+      transition: 0.2s ease-out;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.55);
+    }
+
+    .garden-visual {
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -56,7 +108,7 @@
         <div>
           <div class="brand-text-main" data-i18n="app_title">Ita’s Arborist Garden</div>
           <div class="brand-text-sub" data-i18n="app_subtitle">
-            Short lessons, gentle quizzes, and a growing forest of knowledge.
+            A gentle bilingual garden to help Ita grow her arborist knowledge.
           </div>
         </div>
       </div>
@@ -67,97 +119,35 @@
       </div>
     </header>
 
-    <main class="app-content">
-      <!-- Lesson -->
-      <section class="card">
-        <div class="card-inner">
-          <div class="card-title">
-            <span data-i18n="lesson1_title">Lesson 1 · Tree Biology Basics</span>
-            <span class="card-pill">🌳 Core</span>
-          </div>
+    <main>
+      <h1 class="hero-title" data-i18n="hero_title">
+        Welcome to Ita’s Arborist Garden
+      </h1>
 
-          <div class="card-subtitle" data-i18n="lesson1_subtitle">
-            Understanding how trees live, breathe, and grow.
-          </div>
+      <p class="hero-sub" data-i18n="hero_sub">
+        Learn tree biology, pruning, safety, identification, soil care, and more — all in short, easy lessons with quizzes you can repeat anytime. Switch between English and Spanish whenever you want.
+      </p>
 
-          <div class="lesson-text">
-            <p data-i18n="lesson1_text">
-              An arborist must understand how trees function: roots absorb water and nutrients, the trunk transports
-              them, and leaves use sunlight to create energy. Healthy structure and proper growth are the foundation
-              of safe tree work.
-            </p>
+      <div style="text-align:center;">
+        <a href="/pages/lesson.html?id=bio-1" class="start-btn" data-i18n="start_btn">
+          Start Learning →
+        </a>
+      </div>
 
-            <p class="lesson-highlight" data-i18n="lesson1_highlight">
-              Roots, trunk, and crown must all be evaluated before any pruning or climbing.
-            </p>
-          </div>
-
-          <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;" />
-
-          <!-- Quiz -->
-          <form class="quiz" data-quiz-id="lesson1" data-correct="roots">
-            <div class="quiz-question" data-i18n="quiz1_question">
-              Which part of the tree is mainly responsible for absorbing water and nutrients?
-            </div>
-
-            <div class="quiz-options">
-              <label class="quiz-option">
-                <input type="radio" name="quiz1" value="crown" />
-                <span data-i18n="quiz1_opt1">The crown (leaves and branches)</span>
-              </label>
-
-              <label class="quiz-option">
-                <input type="radio" name="quiz1" value="trunk" />
-                <span data-i18n="quiz1_opt2">The trunk</span>
-              </label>
-
-              <label class="quiz-option">
-                <input type="radio" name="quiz1" value="roots" />
-                <span data-i18n="quiz1_opt3">The roots</span>
-              </label>
-            </div>
-
-            <div class="quiz-actions">
-              <button type="submit" class="btn-primary">✓ Quiz</button>
-              <div class="quiz-feedback" data-quiz-feedback></div>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- Progress -->
-      <aside class="card">
-        <div class="card-inner progress-card">
-          <div class="progress-header">
-            <span data-i18n="progress_label">Certification path</span>
-            <span data-i18n="progress_value">Lesson 1 of 20</span>
-          </div>
-
-          <div class="progress-badge">
-            🌱 <span data-i18n="progress_badge">Growing knowledge</span>
-          </div>
-
-          <div class="progress-bar-outer">
-            <div class="progress-bar-inner"></div>
-          </div>
-
-          <div class="garden-visual">
-            <div class="garden-stem"><div class="garden-bloom"></div></div>
-            <div class="garden-stem"><div class="garden-bloom"></div></div>
-            <div class="garden-stem"><div class="garden-bloom"></div></div>
-          </div>
-        </div>
-      </aside>
+      <div class="garden-visual">
+        <div class="garden-stem"><div class="garden-bloom"></div></div>
+        <div class="garden-stem"><div class="garden-bloom"></div></div>
+        <div class="garden-stem"><div class="garden-bloom"></div></div>
+      </div>
     </main>
 
     <footer class="app-footer">
       <span data-i18n="footer_left">Made with care for Ita’s arborist journey.</span>
-      <a href="/pages/lesson1.html" data-i18n="footer_right">Next lesson →</a>
+      <a href="/pages/lesson.html?id=bio-1" data-i18n="footer_right">Begin →</a>
     </footer>
   </div>
 
   <script src="/assets/js/language.js"></script>
-  <script src="/assets/js/quiz.js"></script>
 
   <script>
     if ("serviceWorker" in navigator) {
