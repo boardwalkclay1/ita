@@ -74,9 +74,17 @@
       line-height: 1.55;
     }
 
-    .start-btn {
+    .btn-row {
+      text-align: center;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .start-btn, .study-btn {
       display: inline-block;
-      margin: 0 auto;
       padding: 12px 26px;
       font-size: 14px;
       font-weight: 600;
@@ -88,7 +96,7 @@
       transition: 0.2s ease-out;
     }
 
-    .start-btn:hover {
+    .start-btn:hover, .study-btn:hover {
       transform: translateY(-2px);
       filter: brightness(1.05);
       box-shadow: 0 16px 34px rgba(0,0,0,0.55);
@@ -128,9 +136,13 @@
         Learn tree biology, pruning, safety, identification, soil care, and more — all in short, easy lessons with quizzes you can repeat anytime. Switch between English and Spanish whenever you want.
       </p>
 
-      <div style="text-align:center;">
-        <a href="/pages/lesson.html?id=bio-1" class="start-btn" data-i18n="start_btn">
+      <div class="btn-row">
+        <a href="/public/pages/lesson.html?id=bio-1" class="start-btn" data-i18n="start_btn">
           Start Learning →
+        </a>
+
+        <a href="/public/pages/study-guide.html" class="study-btn" data-i18n="study_btn">
+          Study Guide →
         </a>
       </div>
 
@@ -143,7 +155,7 @@
 
     <footer class="app-footer">
       <span data-i18n="footer_left">Made with care for Ita’s arborist journey.</span>
-      <a href="/pages/lesson.html?id=bio-1" data-i18n="footer_right">Begin →</a>
+      <a href="/public/pages/lesson.html?id=bio-1" data-i18n="footer_right">Begin →</a>
     </footer>
   </div>
 
