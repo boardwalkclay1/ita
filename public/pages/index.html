@@ -7,7 +7,47 @@
   <link rel="icon" href="/public/favicon.ico" />
   <link rel="manifest" href="/public/manifest.json" />
   <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    body {
+      background: url("/assets/img/ita-index.jpg") center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    /* Soft rose + fruit glow overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 156, 0.35), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.35), transparent 60%),
+        rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: 0;
+    }
+
+    .app-shell {
+      backdrop-filter: blur(12px) saturate(1.25);
+      background: rgba(10, 20, 15, 0.72);
+    }
+
+    .brand-icon {
+      background:
+        radial-gradient(circle at 30% 20%, #ff6b9c, transparent 60%),
+        radial-gradient(circle at 70% 80%, #ffb347, transparent 60%),
+        rgba(255, 255, 255, 0.15);
+    }
+
+    .garden-bloom {
+      background:
+        radial-gradient(circle at 30% 20%, #ff6b9c, transparent 60%),
+        radial-gradient(circle at 70% 80%, #ffb347, transparent 60%);
+      box-shadow: 0 0 12px rgba(255, 107, 156, 0.6);
+    }
+  </style>
 </head>
+
 <body>
   <div class="app-shell">
     <header class="app-header">
@@ -28,13 +68,14 @@
     </header>
 
     <main class="app-content">
-      <!-- Left: Lesson + quiz -->
+      <!-- Lesson -->
       <section class="card">
         <div class="card-inner">
           <div class="card-title">
             <span data-i18n="lesson1_title">Lesson 1 · Tree Biology Basics</span>
             <span class="card-pill">🌳 Core</span>
           </div>
+
           <div class="card-subtitle" data-i18n="lesson1_subtitle">
             Understanding how trees live, breathe, and grow.
           </div>
@@ -45,6 +86,7 @@
               them, and leaves use sunlight to create energy. Healthy structure and proper growth are the foundation
               of safe tree work.
             </p>
+
             <p class="lesson-highlight" data-i18n="lesson1_highlight">
               Roots, trunk, and crown must all be evaluated before any pruning or climbing.
             </p>
@@ -52,6 +94,7 @@
 
           <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;" />
 
+          <!-- Quiz -->
           <form class="quiz" data-quiz-id="lesson1" data-correct="roots">
             <div class="quiz-question" data-i18n="quiz1_question">
               Which part of the tree is mainly responsible for absorbing water and nutrients?
@@ -62,10 +105,12 @@
                 <input type="radio" name="quiz1" value="crown" />
                 <span data-i18n="quiz1_opt1">The crown (leaves and branches)</span>
               </label>
+
               <label class="quiz-option">
                 <input type="radio" name="quiz1" value="trunk" />
                 <span data-i18n="quiz1_opt2">The trunk</span>
               </label>
+
               <label class="quiz-option">
                 <input type="radio" name="quiz1" value="roots" />
                 <span data-i18n="quiz1_opt3">The roots</span>
@@ -73,18 +118,14 @@
             </div>
 
             <div class="quiz-actions">
-              <button type="submit" class="btn-primary">
-                ✓ Quiz
-              </button>
-              <div class="quiz-feedback" data-quiz-feedback>
-                <!-- feedback text -->
-              </div>
+              <button type="submit" class="btn-primary">✓ Quiz</button>
+              <div class="quiz-feedback" data-quiz-feedback></div>
             </div>
           </form>
         </div>
       </section>
 
-      <!-- Right: progress + garden visual -->
+      <!-- Progress -->
       <aside class="card">
         <div class="card-inner progress-card">
           <div class="progress-header">
@@ -101,32 +142,23 @@
           </div>
 
           <div class="garden-visual">
-            <div class="garden-stem">
-              <div class="garden-bloom"></div>
-            </div>
-            <div class="garden-stem">
-              <div class="garden-bloom"></div>
-            </div>
-            <div class="garden-stem">
-              <div class="garden-bloom"></div>
-            </div>
+            <div class="garden-stem"><div class="garden-bloom"></div></div>
+            <div class="garden-stem"><div class="garden-bloom"></div></div>
+            <div class="garden-stem"><div class="garden-bloom"></div></div>
           </div>
         </div>
       </aside>
     </main>
 
     <footer class="app-footer">
-      <span data-i18n="footer_left">
-        Made with care for Ita’s arborist journey.
-      </span>
-      <a href="/pages/lesson1.html" data-i18n="footer_right">
-        Next lesson →
-      </a>
+      <span data-i18n="footer_left">Made with care for Ita’s arborist journey.</span>
+      <a href="/pages/lesson1.html" data-i18n="footer_right">Next lesson →</a>
     </footer>
   </div>
 
   <script src="/assets/js/language.js"></script>
   <script src="/assets/js/quiz.js"></script>
+
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("/public/service-worker.js").catch(() => {});
