@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ita’s Arborist Garden – Lesson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/public/favicon.ico" />
+  <link rel="manifest" href="/public/manifest.json" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    body {
+      background: url("/assets/img/ita-index.jpg") center/cover no-repeat fixed;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 156, 0.35), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.35), transparent 60%),
+        rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: 0;
+    }
+    .app-shell {
+      backdrop-filter: blur(12px) saturate(1.25);
+      background: rgba(10, 20, 15, 0.78);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-icon">🍊</div>
+        <div>
+          <div class="brand-text-main" data-i18n="app_title">Ita’s Arborist Garden</div>
+          <div class="brand-text-sub" data-i18n="app_subtitle">
+            Short lessons, gentle quizzes, and a growing forest of knowledge.
+          </div>
+        </div>
+      </div>
+
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main class="app-content">
+      <!-- Lesson + quiz -->
+      <section class="card">
+        <div class="card-inner">
+          <div class="card-title">
+            <span id="lesson-title">Lesson title</span>
+            <span class="card-pill" id="lesson-category-pill">🌳 Category</span>
+          </div>
+
+          <div class="card-subtitle" id="lesson-category-sub">
+            <!-- category subtitle / description if needed -->
+          </div>
+
+          <div class="lesson-text">
+            <p id="lesson-text"></p>
+            <p class="lesson-highlight" id="lesson-highlight"></p>
+            <p class="lesson-tip" id="lesson-tip" style="font-size:12px; color:#c7f7d0; margin-top:6px;"></p>
+          </div>
+
+          <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;" />
+
+          <form class="quiz" id="lesson-quiz-form">
+            <div class="quiz-question" id="quiz-question"></div>
+
+            <div class="quiz-options" id="quiz-options"></div>
+
+            <div class="quiz-actions">
+              <button type="submit" class="btn-primary" id="quiz-submit">
+                ✓ Quiz
+              </button>
+              <div class="quiz-feedback" id="quiz-feedback"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Progress / navigation -->
+      <aside class="card">
+        <div class="card-inner progress-card">
+          <div class="progress-header">
+            <span id="progress-label">Lesson progress</span>
+            <span id="progress-value"></span>
+          </div>
+
+          <div class="progress-badge">
+            🌱 <span id="progress-badge-text">Growing knowledge</span>
+          </div>
+
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner" id="progress-bar-inner"></div>
+          </div>
+
+          <div class="garden-visual">
+            <div class="garden-stem"><div class="garden-bloom"></div></div>
+            <div class="garden-stem"><div class="garden-bloom"></div></div>
+            <div class="garden-stem"><div class="garden-bloom"></div></div>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:8px; justify-content:space-between;">
+            <button type="button" class="btn-primary" id="prev-lesson" style="flex:1; font-size:11px;">
+              ← Previous
+            </button>
+            <button type="button" class="btn-primary" id="next-lesson" style="flex:1; font-size:11px;">
+              Next →
+            </button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <span data-i18n="footer_left">Made with care for Ita’s arborist journey.</span>
+      <a href="/pages/index.html">Back to garden</a>
+    </footer>
+  </div>
+
+  <script src="/assets/js/language.js"></script>
+  <script src="/assets/js/lesson-data.js"></script>
+  <script src="/assets/js/lesson-page.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/public/service-worker.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>
