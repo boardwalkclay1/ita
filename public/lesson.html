@@ -4,29 +4,54 @@
   <meta charset="UTF-8" />
   <title>Ita’s Arborist Garden – Lesson</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="icon" href="/public/favicon.ico" />
   <link rel="manifest" href="/public/manifest.json" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
+    /* 🌊 Water background */
     body {
-      background: url("/assets/img/ita-index.jpg") center/cover no-repeat fixed;
+      background: url("/assets/img/ita-water.jpg") center/cover no-repeat fixed;
       position: relative;
     }
+
+    /* Soft rose + fruit + water glow overlay */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255, 107, 156, 0.35), transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.35), transparent 60%),
+        radial-gradient(circle at 15% 20%, rgba(255, 107, 156, 0.35), transparent 60%),
+        radial-gradient(circle at 85% 80%, rgba(255, 179, 71, 0.35), transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.25), transparent 60%),
         rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(4px) saturate(1.2);
       z-index: 0;
     }
+
+    /* Glass shell */
     .app-shell {
-      backdrop-filter: blur(12px) saturate(1.25);
+      backdrop-filter: blur(14px) saturate(1.25);
       background: rgba(10, 20, 15, 0.78);
+      padding-top: 32px;
+      padding-bottom: 32px;
+      border-radius: 24px;
+    }
+
+    /* Bloom glow upgrade */
+    .garden-bloom {
+      background:
+        radial-gradient(circle at 30% 20%, #ff6b9c, transparent 60%),
+        radial-gradient(circle at 70% 80%, #ffb347, transparent 60%);
+      box-shadow: 0 0 16px rgba(255, 107, 156, 0.7);
+    }
+
+    /* Lesson title glow */
+    #lesson-title {
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
@@ -51,7 +76,7 @@
     </header>
 
     <main class="app-content">
-      <!-- Lesson + quiz -->
+      <!-- LESSON CARD -->
       <section class="card">
         <div class="card-inner">
           <div class="card-title">
@@ -59,9 +84,7 @@
             <span class="card-pill" id="lesson-category-pill">🌳 Category</span>
           </div>
 
-          <div class="card-subtitle" id="lesson-category-sub">
-            <!-- category subtitle / description if needed -->
-          </div>
+          <div class="card-subtitle" id="lesson-category-sub"></div>
 
           <div class="lesson-text">
             <p id="lesson-text"></p>
@@ -71,22 +94,20 @@
 
           <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;" />
 
+          <!-- QUIZ -->
           <form class="quiz" id="lesson-quiz-form">
             <div class="quiz-question" id="quiz-question"></div>
-
             <div class="quiz-options" id="quiz-options"></div>
 
             <div class="quiz-actions">
-              <button type="submit" class="btn-primary" id="quiz-submit">
-                ✓ Quiz
-              </button>
+              <button type="submit" class="btn-primary" id="quiz-submit">✓ Quiz</button>
               <div class="quiz-feedback" id="quiz-feedback"></div>
             </div>
           </form>
         </div>
       </section>
 
-      <!-- Progress / navigation -->
+      <!-- PROGRESS + NAV -->
       <aside class="card">
         <div class="card-inner progress-card">
           <div class="progress-header">
@@ -109,12 +130,8 @@
           </div>
 
           <div style="margin-top:12px; display:flex; gap:8px; justify-content:space-between;">
-            <button type="button" class="btn-primary" id="prev-lesson" style="flex:1; font-size:11px;">
-              ← Previous
-            </button>
-            <button type="button" class="btn-primary" id="next-lesson" style="flex:1; font-size:11px;">
-              Next →
-            </button>
+            <button type="button" class="btn-primary" id="prev-lesson" style="flex:1; font-size:11px;">← Previous</button>
+            <button type="button" class="btn-primary" id="next-lesson" style="flex:1; font-size:11px;">Next →</button>
           </div>
         </div>
       </aside>
