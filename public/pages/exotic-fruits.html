@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exotic Fruits • Ita’s Arborist Garden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <style>
+    body {
+      background: url("/assets/img/ita-index.jpg") center/cover fixed no-repeat;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 156, 0.35), transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.35), transparent 60%),
+        rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      z-index: 0;
+    }
+
+    .page-shell {
+      position: relative;
+      z-index: 2;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #d7e7dd;
+    }
+
+    /* 🍑 BUTTON */
+    .fruit-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 999;
+      transition: transform 0.2s ease;
+    }
+
+    .fruit-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* SLIDE-OUT MENU */
+    .fruit-menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100vh;
+      background: rgba(10, 20, 15, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 30px 20px;
+      transition: left 0.35s ease;
+      z-index: 998;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .fruit-menu.open {
+      left: 0;
+    }
+
+    .fruit-menu h2 {
+      color: #ffb347;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .fruit-menu a {
+      display: block;
+      padding: 10px 0;
+      color: #ff6b9c;
+      font-size: 16px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .fruit-menu a:hover {
+      color: #ffb347;
+    }
+
+    /* SECTION HEADERS */
+    .fruit-section {
+      margin-bottom: 60px;
+      padding: 20px;
+      background: rgba(10, 20, 15, 0.75);
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fruit-section h2 {
+      font-size: 26px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .fruit-section h3 {
+      color: #ffb347;
+      margin-top: 20px;
+    }
+
+    /* DROPDOWNS */
+    .dropdown {
+      margin-top: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dropdown-header {
+      padding: 12px;
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      font-weight: 600;
+      color: #ff6b9c;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      color: #d7e7dd;
+      line-height: 1.55;
+    }
+
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
+
+    /* NAVIGATION BUTTONS */
+    .nav-buttons {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      color: #050806;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    /* QUIZ SECTION */
+    #fruit-quiz {
+      margin-top: 80px;
+      padding: 20px;
+      background: rgba(10,20,15,0.75);
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #quiz-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🍑 BUTTON -->
+  <div class="fruit-btn" id="fruitBtn">🍑</div>
+
+  <!-- SLIDE-OUT MENU -->
+  <div class="fruit-menu" id="fruitMenu">
+    <h2>Exotic Fruits</h2>
+    <a href="#custard">Red Custard Apple</a>
+    <a href="#sapote">Black Sapote</a>
+    <a href="#caimito">Star Apple (Caimito)</a>
+    <a href="#roxburgh">Roxburgh Fig</a>
+    <a href="#cecropia">Cecropia peltata</a>
+  </div>
+
+  <div class="page-shell">
+
+    <!-- RED CUSTARD APPLE -->
+    <section class="fruit-section" id="custard">
+      <h2>Red Custard Apple</h2>
+      <h3><i>Annona reticulata</i></h3>
+      <p>Known for its “sweet & cream raspberry cheesecake” flavor, this tropical fruit is beloved for its custard-like texture and aromatic sweetness.</p>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Family: Annonaceae</li>
+            <li>Native to Central America</li>
+            <li>Medium-sized tree with spreading canopy</li>
+            <li>Fruit has a reticulated (net-like) skin pattern</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Identification Tips</div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Heart-shaped or rounded fruit</li>
+            <li>Soft, creamy interior</li>
+            <li>Sweet aroma when ripe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLACK SAPOTE -->
+    <section class="fruit-section" id="sapote">
+      <h2>Black Sapote</h2>
+      <p>Often called the “chocolate pudding fruit,” Black Sapote is famous for its rich, smooth, cocoa-like flavor.</p>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Family: Ebenaceae</li>
+            <li>Native to Mexico & Central America</li>
+            <li>Evergreen tree with glossy leaves</li>
+            <li>Fruit turns dark brown/black when ripe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAR APPLE -->
+    <section class="fruit-section" id="caimito">
+      <h2>Star Apple / Caimito</h2>
+      <p>Described as having a “condensed milk taste,” this fruit is creamy, sweet, and visually stunning when cut open.</p>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Family: Sapotaceae</li>
+            <li>Native to the Caribbean & Central America</li>
+            <li>Latex present in skin and leaves</li>
+            <li>Leaves have a metallic bronze underside</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROXBURGH FIG -->
+    <section class="fruit-section" id="roxburgh">
+      <h2>Roxburgh Fig</h2>
+      <p>“Mildly sweet, intense berry aroma, raspberry taste without tartness.” A rare fig from the depths of the Indian jungle.</p>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Family: Moraceae</li>
+            <li>Native to India & Southeast Asia</li>
+            <li>Large leaves with rough texture</li>
+            <li>Fruit grows in clusters on trunk (cauliflorous)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CECROPIA -->
+    <section class="fruit-section" id="cecropia">
+      <h2>Cecropia peltata</h2>
+      <p>Known as the “gummy worm fruit,” with a flavor reminiscent of fig & kiwi.</p>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Family: Urticaceae</li>
+            <li>Native to tropical Americas</li>
+            <li>Fast-growing pioneer species</li>
+            <li>Hollow stems often inhabited by ants</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+      <a href="/public/index.html">Home</a>
+      <a href="/public/pages/lesson.html?id=bio-1">Lessons</a>
+      <a href="/public/pages/study-guide.html">Study Guide</a>
+      <a href="#fruit-quiz">Fruit Quiz</a>
+    </div>
+
+    <!-- QUIZ -->
+    <section id="fruit-quiz">
+      <h2>🍑 Exotic Fruits Quiz</h2>
+      <div id="quiz-container"></div>
+      <button id="startQuizBtn" class="start-btn">Start Quiz</button>
+    </section>
+
+  </div>
+
+  <script src="/assets/js/exotic-fruits-quiz.js"></script>
+
+  <script>
+    // 🍑 MENU TOGGLE
+    const fruitBtn = document.getElementById("fruitBtn");
+    const fruitMenu = document.getElementById("fruitMenu");
+
+    fruitBtn.addEventListener("click", () => {
+      fruitMenu.classList.toggle("open");
+    });
+
+    // DROPDOWNS
+    document.querySelectorAll(".dropdown-header").forEach(header => {
+      header.addEventListener("click", () => {
+        header.parentElement.classList.toggle("open");
+      });
+    });
+  </script>
+
+</body>
+</html>
