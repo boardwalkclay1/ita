@@ -412,3 +412,34 @@ body {
 .app-footer a:hover {
   text-decoration: underline;
 }
+.hero-sub {
+  text-align: center;
+  font-size: 15px;
+  color: #d7e7dd;
+  max-width: 600px;
+  margin: 0 auto 30px; /* increased from 24px */
+  line-height: 1.6;
+}
+
+/* ✨ Subtle explanation text */
+.hero-explain {
+  text-align: center;
+  font-size: 13px;
+  color: #e8f3ec;
+  opacity: 0.9;
+  max-width: 620px;
+  margin: 10px auto 32px; /* removed negative margin, added breathing room */
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.app-shell {
+  backdrop-filter: blur(14px) saturate(1.25);
+  background: rgba(10, 20, 15, 0.78);
+  padding-top: 40px;
+  padding-bottom: 60px; /* increased from 40px */
+}
+
+footer.app-footer {
+  margin-top: 40px; /* ensures footer never overlaps content */
+}
