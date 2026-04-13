@@ -34,6 +34,8 @@
     body {
       background: url("/assets/img/ita-index.jpg") center/cover no-repeat fixed;
       position: relative;
+      margin: 0;
+      padding: 0;
     }
 
     body::before {
@@ -49,56 +51,59 @@
     }
 
     .app-shell {
+      position: relative;
+      z-index: 2;
       backdrop-filter: blur(14px) saturate(1.25);
       background: rgba(10, 20, 15, 0.78);
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding: 60px 20px 80px;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .hero-title {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 10px;
+      margin: 0 0 20px;
       background: linear-gradient(135deg, #ff6b9c, #ffb347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      line-height: 1.2;
     }
 
     .hero-sub {
       text-align: center;
-      font-size: 15px;
+      font-size: 16px;
       color: #d7e7dd;
-      max-width: 600px;
-      margin: 0 auto 24px;
-      line-height: 1.55;
+      max-width: 650px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
     }
 
-    /* ✨ Subtle explanation text */
     .hero-explain {
       text-align: center;
-      font-size: 13px;
+      font-size: 14px;
       color: #e8f3ec;
-      opacity: 0.85;
-      max-width: 620px;
-      margin: -10px auto 26px;
-      line-height: 1.5;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 10px auto 32px;
+      line-height: 1.55;
       font-style: italic;
     }
 
     .btn-row {
       text-align: center;
-      margin-top: 20px;
+      margin: 30px 0;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .start-btn, .study-btn {
       display: inline-block;
-      padding: 12px 26px;
-      font-size: 14px;
+      padding: 14px 30px;
+      font-size: 15px;
       font-weight: 600;
       border-radius: 999px;
       background: linear-gradient(135deg, #ff6b9c, #ffb347);
@@ -115,7 +120,25 @@
     }
 
     .garden-visual {
-      margin-top: 30px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .app-footer {
+      margin-top: 60px;
+      text-align: center;
+      color: #d7e7dd;
+      font-size: 14px;
+    }
+
+    .app-footer a {
+      display: inline-block;
+      margin-left: 10px;
+      color: #ffb347;
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -148,7 +171,6 @@
         Learn tree biology, pruning, safety, identification, soil care, and more — all in short, easy lessons with quizzes you can repeat anytime. Switch between English and Spanish whenever you want.
       </p>
 
-      <!-- ✨ Subtle explanation added -->
       <p class="hero-explain">
         This space was designed to feel calm and inviting — a quiet garden where learning grows slowly and beautifully, one branch at a time.
       </p>
@@ -163,7 +185,6 @@
         </a>
       </div>
 
-      <!-- ✨ Another subtle explanation -->
       <p class="hero-explain">
         Lessons guide you through the essentials, while the study guide helps you explore deeper roots and branches of arborist knowledge.
       </p>
