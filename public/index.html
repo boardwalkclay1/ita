@@ -36,6 +36,7 @@
       position: relative;
       margin: 0;
       padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body::before {
@@ -54,17 +55,75 @@
       position: relative;
       z-index: 2;
       backdrop-filter: blur(14px) saturate(1.25);
-      background: rgba(10, 20, 15, 0.78);
-      padding: 60px 20px 80px;
+      background: rgba(10, 20, 15, 0.82);
+      padding: 24px 20px 60px;
       min-height: 100vh;
       box-sizing: border-box;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      font-size: 26px;
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      font-size: 18px;
+      color: #f7f7f2;
+    }
+
+    .brand-text-sub {
+      font-size: 13px;
+      color: #c9ddcf;
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: transparent;
+      color: #e8f3ec;
+      padding: 6px 14px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      color: #050806;
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    main {
+      margin-top: 10px;
     }
 
     .hero-title {
       font-size: 34px;
       font-weight: 700;
       text-align: center;
-      margin: 0 0 20px;
+      margin: 0 0 18px;
       background: linear-gradient(135deg, #ff6b9c, #ffb347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -75,8 +134,8 @@
       text-align: center;
       font-size: 16px;
       color: #d7e7dd;
-      max-width: 650px;
-      margin: 0 auto 28px;
+      max-width: 680px;
+      margin: 0 auto 18px;
       line-height: 1.6;
     }
 
@@ -85,15 +144,15 @@
       font-size: 14px;
       color: #e8f3ec;
       opacity: 0.9;
-      max-width: 650px;
-      margin: 10px auto 32px;
+      max-width: 680px;
+      margin: 10px auto 26px;
       line-height: 1.55;
       font-style: italic;
     }
 
     .btn-row {
       text-align: center;
-      margin: 30px 0;
+      margin: 26px 0 32px;
       display: flex;
       justify-content: center;
       gap: 18px;
@@ -111,6 +170,7 @@
       text-decoration: none;
       box-shadow: 0 12px 28px rgba(0,0,0,0.45);
       transition: 0.2s ease-out;
+      white-space: nowrap;
     }
 
     .start-btn:hover, .study-btn:hover {
@@ -119,18 +179,72 @@
       box-shadow: 0 16px 34px rgba(0,0,0,0.55);
     }
 
+    .layout-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 840px) {
+      .layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .panel {
+      background: rgba(5, 12, 9, 0.85);
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .panel-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #ffb347;
+      margin-bottom: 8px;
+    }
+
+    .panel-sub {
+      font-size: 13px;
+      color: #d7e7dd;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .panel-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: #e8f3ec;
+    }
+
+    .panel-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .panel-list strong {
+      font-weight: 600;
+      color: #ffdfb0;
+    }
+
     .garden-visual {
-      margin-top: 40px;
+      margin-top: 26px;
       display: flex;
       justify-content: center;
       gap: 20px;
+      min-height: 60px;
     }
 
     .app-footer {
-      margin-top: 60px;
+      margin-top: 40px;
       text-align: center;
       color: #d7e7dd;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .app-footer a {
@@ -139,6 +253,10 @@
       color: #ffb347;
       text-decoration: none;
       font-weight: 600;
+    }
+
+    .app-footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -168,11 +286,11 @@
       </h1>
 
       <p class="hero-sub" data-i18n="hero_sub">
-        Learn tree biology, pruning, safety, identification, soil care, and more — all in short, easy lessons with quizzes you can repeat anytime. Switch between English and Spanish whenever you want.
+        Learn tree biology, pruning, safety, identification, soil care, pests, risk assessment, and more — all in short, focused lessons with quizzes, glossaries, and detailed study notes you can revisit anytime. Switch between English and Spanish whenever you want.
       </p>
 
       <p class="hero-explain">
-        This space was designed to feel calm and inviting — a quiet garden where learning grows slowly and beautifully, one branch at a time.
+        Think of this as a quiet study garden: each topic is a small tree of its own, with roots (fundamentals), branches (details), and leaves (examples) you can explore at your own pace.
       </p>
 
       <div class="btn-row">
@@ -185,9 +303,48 @@
         </a>
       </div>
 
-      <p class="hero-explain">
-        Lessons guide you through the essentials, while the study guide helps you explore deeper roots and branches of arborist knowledge.
-      </p>
+      <div class="layout-grid">
+        <section class="panel">
+          <h2 class="panel-title">How to use this garden</h2>
+          <p class="panel-sub">
+            You can treat this like a structured course or a reference you dip into when you need to review a concept.
+          </p>
+          <ul class="panel-list">
+            <li><strong>1. Start Learning:</strong> Use the <em>Start Learning</em> button to walk through lessons one at a time. Each lesson focuses on a single concept (for example: tree structure, pruning types, soil chemistry) and gives you a clear explanation, diagrams or mental models, and a short quiz.</li>
+            <li><strong>2. Open the Study Guide:</strong> The <em>Study Guide</em> button opens a map of all topics. From there, you can jump directly to the area you want to review: biology, pruning, climbing, safety, pests, risk, regulations, and more.</li>
+            <li><strong>3. Follow the branches:</strong> Inside each topic, you’ll see sections, glossary terms, and practice questions. When something feels fuzzy, you can re-open that module and read the deeper explanation again.</li>
+            <li><strong>4. Switch languages anytime:</strong> Use the EN / ES toggle at the top to see the same ideas in English or Spanish. This is especially useful for memorizing technical terms in both languages for the exam.</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel-title">What you’ll find inside</h2>
+          <p class="panel-sub">
+            The garden is organized to match how arborist exams and real-world work are structured.
+          </p>
+          <ul class="panel-list">
+            <li><strong>Tree Biology & Structure:</strong> Roots, trunk, crown, growth, physiology, and how trees respond to stress.</li>
+            <li><strong>Pruning & Climbing:</strong> Types of pruning, correct cutting techniques, timing, climbing systems, and rigging basics.</li>
+            <li><strong>Safety & Risk:</strong> PPE, chainsaw safety, jobsite setup, structural defects, targets, and mitigation strategies.</li>
+            <li><strong>Soils, Pests & Disease:</strong> Soil types, chemistry, water movement, insects, diseases, and integrated pest management.</li>
+            <li><strong>Regulations & Ethics:</strong> Laws, protected trees, utility rules, ethics, and best practices that show up on exams and in real jobs.</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="panel" style="margin-top: 26px;">
+        <h2 class="panel-title">Suggested path for Ita’s study sessions</h2>
+        <p class="panel-sub">
+          If you want a simple, repeatable routine, you can use this flow each time you sit down to study:
+        </p>
+        <ul class="panel-list">
+          <li><strong>Step 1 – Warm-up (5–10 minutes):</strong> Open the <em>Study Guide</em> and skim one section you’ve already seen. Just read the headings and a few glossary terms to wake up your memory.</li>
+          <li><strong>Step 2 – New growth (15–25 minutes):</strong> Click <em>Start Learning</em> and work through one new lesson. Read the explanation slowly, pause at any unfamiliar word, and check the glossary inside that module.</li>
+          <li><strong>Step 3 – Quiz yourself (5–10 minutes):</strong> Answer the built-in questions. If you miss something, go back to that part of the explanation and re-read just that slice instead of the whole thing.</li>
+          <li><strong>Step 4 – Quick recap (3–5 minutes):</strong> At the end, say out loud (or write down) three things you want to remember from that lesson: one definition, one process, and one “real-world” example.</li>
+          <li><strong>Step 5 – Optional deep dive:</strong> On days when you have more energy, jump into the <em>Study Guide</em> and open a related topic (for example: after pruning types, look at pruning techniques and timing).</li>
+        </ul>
+      </section>
 
       <div class="garden-visual">
         <div class="garden-stem"><div class="garden-bloom"></div></div>
