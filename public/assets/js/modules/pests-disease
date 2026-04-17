@@ -1,0 +1,58 @@
+window.STUDY_MODULES["pests-disease"] = {
+  title: "🦠 Diseases",
+  overview: `
+    Tree diseases are caused by fungi, bacteria, and viruses.
+    Many diseases exploit stressed trees or enter through wounds.
+  `,
+  sections: [
+    {
+      heading: "Fungal Diseases",
+      body: `
+        Fungi are the most common tree pathogens. They spread via spores and thrive in moist conditions.
+      `,
+      bullets: [
+        "Root rot caused by Armillaria or Phytophthora.",
+        "Leaf spots and blights reduce photosynthesis.",
+        "Cankers kill bark and cambium.",
+        "Fungal fruiting bodies indicate advanced decay."
+      ]
+    },
+    {
+      heading: "Bacterial Diseases",
+      body: `
+        Bacteria infect through wounds or natural openings.
+      `,
+      bullets: [
+        "Fire blight affects apples and pears.",
+        "Bacterial wetwood causes slime flux.",
+        "Often spread by insects or pruning tools.",
+        "Sanitation pruning reduces spread."
+      ]
+    },
+    {
+      heading: "Viral Diseases",
+      body: `
+        Viruses cause distorted growth and reduced vigor.
+        They are often incurable and spread by insects.
+      `,
+      bullets: [
+        "Mosaic patterns on leaves.",
+        "Stunted growth.",
+        "Transmitted by aphids or leafhoppers.",
+        "Management focuses on prevention."
+      ]
+    }
+  ],
+  glossary: [
+    { term: "Canker", definition: "Localized dead area on bark or cambium." },
+    { term: "Mycelium", definition: "Fungal tissue that spreads through wood or soil." }
+  ],
+  quiz: [
+    {
+      question: "Which pathogen type is responsible for most tree diseases?",
+      options: ["Bacteria", "Viruses", "Fungi", "Nematodes"],
+      answer: 2,
+      explanation: "Fungi cause the majority of tree diseases."
+    }
+  ]
+};
