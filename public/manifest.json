@@ -2,21 +2,67 @@
   "name": "Ita’s Arborist Garden",
   "short_name": "Arborist Garden",
   "description": "A bilingual learning garden designed to help Ita study for her arborist certification with gentle lessons, quizzes, and beautiful nature-inspired visuals.",
-  "start_url": "/pages/index.html",
+  "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#050b08",
   "theme_color": "#ff6b9c",
-  "categories": ["education", "learning", "arborist", "nature", "training"],
   "lang": "en",
   "dir": "ltr",
+  "categories": ["education", "learning", "arborist", "nature", "training"],
+
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "16x16 24x24 32x32 64x64",
-      "type": "image/x-icon",
+      "src": "/public/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/public/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Study Guide",
+      "short_name": "Guide",
+      "url": "/pages/study-guide.html",
+      "icons": [{ "src": "/public/icons/shortcut-guide.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Lessons",
+      "short_name": "Lessons",
+      "url": "/pages/lesson.html",
+      "icons": [{ "src": "/public/icons/shortcut-lessons.png", "sizes": "96x96" }]
+    }
+  ],
+
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ita-3wf.pages.dev/manifest.json"
     }
   ]
 }
