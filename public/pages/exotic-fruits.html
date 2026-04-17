@@ -12,6 +12,8 @@
       background: url("/assets/img/ita-index.jpg") center/cover fixed no-repeat;
       position: relative;
       overflow-x: hidden;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body::before {
@@ -29,10 +31,30 @@
     .page-shell {
       position: relative;
       z-index: 2;
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 40px 20px 80px;
+      max-width: 960px;
       margin: 0 auto;
       color: #d7e7dd;
+      box-sizing: border-box;
+    }
+
+    .page-header {
+      margin-bottom: 24px;
+    }
+
+    .page-title {
+      font-size: 30px;
+      margin: 0 0 8px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-sub {
+      font-size: 14px;
+      max-width: 640px;
+      line-height: 1.6;
+      opacity: 0.95;
     }
 
     /* 🍑 BUTTON */
@@ -57,12 +79,13 @@
       left: -260px;
       width: 260px;
       height: 100vh;
-      background: rgba(10, 20, 15, 0.85);
+      background: rgba(10, 20, 15, 0.9);
       backdrop-filter: blur(12px);
       padding: 30px 20px;
       transition: left 0.35s ease;
       z-index: 998;
       border-right: 1px solid rgba(255,255,255,0.1);
+      box-sizing: border-box;
     }
 
     .fruit-menu.open {
@@ -75,11 +98,18 @@
       font-size: 20px;
     }
 
+    .fruit-menu p {
+      font-size: 12px;
+      color: #c9ddcf;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
     .fruit-menu a {
       display: block;
       padding: 10px 0;
       color: #ff6b9c;
-      font-size: 16px;
+      font-size: 15px;
       text-decoration: none;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
@@ -88,11 +118,11 @@
       color: #ffb347;
     }
 
-    /* SECTION HEADERS */
+    /* SECTION CARD */
     .fruit-section {
       margin-bottom: 60px;
-      padding: 20px;
-      background: rgba(10, 20, 15, 0.75);
+      padding: 20px 20px 24px;
+      background: rgba(10, 20, 15, 0.78);
       border-radius: 14px;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.08);
@@ -103,12 +133,28 @@
       background: linear-gradient(135deg, #ff6b9c, #ffb347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
 
     .fruit-section h3 {
       color: #ffb347;
-      margin-top: 20px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .fruit-section p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .fruit-tagline {
+      font-size: 13px;
+      opacity: 0.9;
+      font-style: italic;
+      margin-bottom: 12px;
     }
 
     /* DROPDOWNS */
@@ -120,28 +166,48 @@
     }
 
     .dropdown-header {
-      padding: 12px;
+      padding: 10px 12px;
       background: rgba(255,255,255,0.05);
       cursor: pointer;
       font-weight: 600;
       color: #ff6b9c;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dropdown-header span {
+      font-size: 11px;
+      color: #e8f3ec;
+      opacity: 0.8;
     }
 
     .dropdown-content {
       display: none;
-      padding: 12px;
+      padding: 10px 12px 12px;
       background: rgba(255,255,255,0.03);
       color: #d7e7dd;
       line-height: 1.55;
+      font-size: 13px;
     }
 
     .dropdown.open .dropdown-content {
       display: block;
     }
 
+    .dropdown ul {
+      margin: 0 0 0 18px;
+      padding: 0;
+    }
+
+    .dropdown li {
+      margin-bottom: 6px;
+    }
+
     /* NAVIGATION BUTTONS */
     .nav-buttons {
-      margin-top: 60px;
+      margin-top: 40px;
       text-align: center;
     }
 
@@ -155,19 +221,126 @@
       text-decoration: none;
       font-weight: 600;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .nav-buttons a:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
     }
 
     /* QUIZ SECTION */
     #fruit-quiz {
-      margin-top: 80px;
-      padding: 20px;
-      background: rgba(10,20,15,0.75);
+      margin-top: 70px;
+      padding: 20px 20px 24px;
+      background: rgba(10,20,15,0.78);
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
+    #fruit-quiz h2 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #fruit-quiz p {
+      font-size: 13px;
+      opacity: 0.9;
+      margin-bottom: 14px;
+    }
+
     #quiz-container {
-      margin-top: 20px;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .quiz-question {
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .quiz-question h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: #ffdfb0;
+    }
+
+    .quiz-options button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin: 4px 0;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.03);
+      color: #e8f3ec;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .quiz-options button.correct {
+      border-color: #6ddf8b;
+      background: rgba(109,223,139,0.12);
+    }
+
+    .quiz-options button.incorrect {
+      border-color: #ff6b6b;
+      background: rgba(255,107,107,0.12);
+    }
+
+    .quiz-explanation {
+      font-size: 12px;
+      margin-top: 4px;
+      opacity: 0.9;
+    }
+
+    .quiz-score {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .quiz-controls {
+      margin-top: 16px;
+      text-align: right;
+    }
+
+    .start-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff6b9c, #ffb347);
+      color: #050806;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      font-size: 14px;
+    }
+
+    .start-btn:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        padding: 32px 14px 60px;
+      }
+
+      .fruit-section {
+        padding: 16px 14px 18px;
+      }
+
+      .fruit-menu {
+        width: 230px;
+      }
     }
   </style>
 </head>
@@ -175,45 +348,81 @@
 <body>
 
   <!-- 🍑 BUTTON -->
-  <div class="fruit-btn" id="fruitBtn">🍑</div>
+  <div class="fruit-btn" id="fruitBtn" title="Open exotic fruits menu">🍑</div>
 
   <!-- SLIDE-OUT MENU -->
-  <div class="fruit-menu" id="fruitMenu">
+  <nav class="fruit-menu" id="fruitMenu">
     <h2>Exotic Fruits</h2>
+    <p>
+      Use this side menu to jump directly to each fruit. Each section has
+      botanical details, identification tips, flavor notes, and cultivation
+      hints so you can connect taste, tree, and habitat.
+    </p>
     <a href="#custard">Red Custard Apple</a>
     <a href="#sapote">Black Sapote</a>
     <a href="#caimito">Star Apple (Caimito)</a>
     <a href="#roxburgh">Roxburgh Fig</a>
     <a href="#cecropia">Cecropia peltata</a>
-  </div>
+    <a href="#fruit-quiz">Exotic Fruits Quiz</a>
+  </nav>
 
   <div class="page-shell">
+
+    <header class="page-header">
+      <h1 class="page-title">Exotic Fruits Collection</h1>
+      <p class="page-sub">
+        This page gathers some of Ita’s favorite “how is this even real?” fruits.
+        Each card gives you a quick flavor snapshot, then lets you open deeper
+        layers: botanical details, identification tips, flavor notes, and
+        cultivation or arborist‑style observations. Use it as a fun break from
+        heavy theory while still training your eye and brain to notice structure,
+        texture, and habitat.
+      </p>
+    </header>
 
     <!-- RED CUSTARD APPLE -->
     <section class="fruit-section" id="custard">
       <h2>Red Custard Apple</h2>
       <h3><i>Annona reticulata</i></h3>
-      <p>Known for its “sweet & cream raspberry cheesecake” flavor, this tropical fruit is beloved for its custard-like texture and aromatic sweetness.</p>
+      <p class="fruit-tagline">“Sweet & cream raspberry cheesecake” — dense, perfumed, and almost dessert by itself.</p>
+      <p>
+        Red custard apple is a tropical Annona with a soft, custard‑like interior and a
+        reticulated (net‑patterned) skin. It’s a good example of how fruit texture,
+        aroma, and seed arrangement can all be used as ID clues, not just leaf shape.
+      </p>
 
       <div class="dropdown">
-        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-header">Botanical Details <span>Family, origin, tree form</span></div>
         <div class="dropdown-content">
           <ul>
-            <li>Family: Annonaceae</li>
-            <li>Native to Central America</li>
-            <li>Medium-sized tree with spreading canopy</li>
-            <li>Fruit has a reticulated (net-like) skin pattern</li>
+            <li><strong>Family:</strong> Annonaceae (same family as cherimoya and soursop).</li>
+            <li><strong>Origin:</strong> Central America and the Caribbean, now grown in many tropical regions.</li>
+            <li><strong>Tree form:</strong> Small to medium tree with a rounded, somewhat open canopy.</li>
+            <li><strong>Leaves:</strong> Simple, entire, often drooping; aromatic when crushed.</li>
+            <li><strong>Fruit:</strong> Heart‑shaped to rounded, with a net‑like skin pattern that can blush red or pink.</li>
           </ul>
         </div>
       </div>
 
       <div class="dropdown">
-        <div class="dropdown-header">Identification Tips</div>
+        <div class="dropdown-header">Identification Tips <span>What to look for</span></div>
         <div class="dropdown-content">
           <ul>
-            <li>Heart-shaped or rounded fruit</li>
-            <li>Soft, creamy interior</li>
-            <li>Sweet aroma when ripe</li>
+            <li>Look for the <strong>reticulated skin</strong> and slightly irregular heart shape.</li>
+            <li>When ripe, the fruit yields slightly to pressure and has a strong, sweet aroma.</li>
+            <li>The interior is <strong>creamy and segmented</strong>, with dark seeds embedded in the pulp.</li>
+            <li>Leaves are long, narrow, and drooping, often clustered near branch tips.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Flavor & Texture Notes <span>Tasting profile</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Texture is thick, custard‑like, and spoonable.</li>
+            <li>Flavor leans toward raspberry, vanilla, and condensed milk.</li>
+            <li>Best eaten fully soft; underripe fruit can be starchy and bland.</li>
           </ul>
         </div>
       </div>
@@ -222,16 +431,45 @@
     <!-- BLACK SAPOTE -->
     <section class="fruit-section" id="sapote">
       <h2>Black Sapote</h2>
-      <p>Often called the “chocolate pudding fruit,” Black Sapote is famous for its rich, smooth, cocoa-like flavor.</p>
+      <h3><i>Diospyros digyna</i></h3>
+      <p class="fruit-tagline">“Chocolate pudding fruit” — looks like dessert, tastes like mild cocoa and dates.</p>
+      <p>
+        Black sapote is a persimmon relative that only reveals its character when fully ripe.
+        It’s a good reminder that color change and softness are critical ripeness indicators,
+        not just calendar date or size.
+      </p>
 
       <div class="dropdown">
-        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-header">Botanical Details <span>Family, habit, leaves</span></div>
         <div class="dropdown-content">
           <ul>
-            <li>Family: Ebenaceae</li>
-            <li>Native to Mexico & Central America</li>
-            <li>Evergreen tree with glossy leaves</li>
-            <li>Fruit turns dark brown/black when ripe</li>
+            <li><strong>Family:</strong> Ebenaceae (persimmon family).</li>
+            <li><strong>Origin:</strong> Mexico and Central America; now grown in warm subtropical climates.</li>
+            <li><strong>Tree:</strong> Evergreen, medium‑sized, with dense, glossy foliage.</li>
+            <li><strong>Leaves:</strong> Simple, entire, dark green, with a leathery feel.</li>
+            <li><strong>Fruit:</strong> Green when immature, turning olive to dark brown as it ripens.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Identification & Ripeness <span>Visual cues</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Unripe fruit is firm and green; <strong>do not eat</strong> at this stage.</li>
+            <li>Ripe fruit becomes soft, with slightly wrinkled skin and dark flesh.</li>
+            <li>Cut fruit reveals a smooth, pudding‑like interior with few seeds.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Flavor & Use <span>How people eat it</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Flavor is mild cocoa, dates, and caramel rather than intense chocolate.</li>
+            <li>Often mixed with milk, vanilla, or sweeteners to make desserts.</li>
+            <li>Texture makes it ideal for smoothies and chilled puddings.</li>
           </ul>
         </div>
       </div>
@@ -240,16 +478,45 @@
     <!-- STAR APPLE -->
     <section class="fruit-section" id="caimito">
       <h2>Star Apple / Caimito</h2>
-      <p>Described as having a “condensed milk taste,” this fruit is creamy, sweet, and visually stunning when cut open.</p>
+      <h3><i>Chrysophyllum cainito</i></h3>
+      <p class="fruit-tagline">“Condensed milk fruit” — creamy, sweet, and stunning when sliced across the star.</p>
+      <p>
+        Star apple gets its name from the star pattern formed by the seeds when you cut it
+        across the equator. It’s a good exercise in noticing latex, leaf undersides, and
+        cut‑surface patterns as ID features.
+      </p>
 
       <div class="dropdown">
-        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-header">Botanical Details <span>Family, latex, leaves</span></div>
         <div class="dropdown-content">
           <ul>
-            <li>Family: Sapotaceae</li>
-            <li>Native to the Caribbean & Central America</li>
-            <li>Latex present in skin and leaves</li>
-            <li>Leaves have a metallic bronze underside</li>
+            <li><strong>Family:</strong> Sapotaceae (many latex‑bearing trees).</li>
+            <li><strong>Origin:</strong> Caribbean and Central America.</li>
+            <li><strong>Latex:</strong> Present in skin and leaves; sticky when cut.</li>
+            <li><strong>Leaves:</strong> Dark green above, with a distinctive metallic bronze underside.</li>
+            <li><strong>Fruit:</strong> Round, purple or green, with a star pattern inside.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Identification Tips <span>Field clues</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Flip a leaf: the <strong>bronze underside</strong> is a strong ID marker.</li>
+            <li>Cut the fruit across the middle to reveal the star‑shaped seed pattern.</li>
+            <li>Latex can make the skin sticky; fruit is usually scooped, not bitten into.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Flavor & Texture <span>Tasting notes</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Texture is jelly‑like near the center, firmer near the rind.</li>
+            <li>Flavor is sweet, creamy, and reminiscent of condensed milk.</li>
+            <li>Best eaten chilled, with the rind and latex avoided.</li>
           </ul>
         </div>
       </div>
@@ -258,16 +525,44 @@
     <!-- ROXBURGH FIG -->
     <section class="fruit-section" id="roxburgh">
       <h2>Roxburgh Fig</h2>
-      <p>“Mildly sweet, intense berry aroma, raspberry taste without tartness.” A rare fig from the depths of the Indian jungle.</p>
+      <h3><i>Ficus auriculata</i></h3>
+      <p class="fruit-tagline">“Mildly sweet, intense berry aroma, raspberry taste without tartness.”</p>
+      <p>
+        Roxburgh fig is a cauliflorous fig — meaning the fruit emerges directly from the trunk
+        and large branches. It’s a perfect example of how fruit position on the tree can be
+        a major identification clue.
+      </p>
 
       <div class="dropdown">
-        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-header">Botanical Details <span>Family, habit, fruiting</span></div>
         <div class="dropdown-content">
           <ul>
-            <li>Family: Moraceae</li>
-            <li>Native to India & Southeast Asia</li>
-            <li>Large leaves with rough texture</li>
-            <li>Fruit grows in clusters on trunk (cauliflorous)</li>
+            <li><strong>Family:</strong> Moraceae (fig and mulberry family).</li>
+            <li><strong>Origin:</strong> India and Southeast Asia.</li>
+            <li><strong>Leaves:</strong> Very large, rough‑textured, often with an “ear‑like” shape.</li>
+            <li><strong>Fruiting habit:</strong> Cauliflorous — fruit clusters appear on trunk and main limbs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Identification & Habitat <span>Where and how it grows</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Look for <strong>large leaves</strong> and fruit attached directly to the trunk.</li>
+            <li>Often found in humid, forested areas or near water.</li>
+            <li>Like other figs, it has a specialized pollination relationship with fig wasps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Flavor Profile <span>Tasting notes</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Flavor is mild but with a strong berry aroma.</li>
+            <li>Less tart than raspberries, more gentle and floral.</li>
+            <li>Texture is soft, with small seeds similar to other figs.</li>
           </ul>
         </div>
       </div>
@@ -276,16 +571,45 @@
     <!-- CECROPIA -->
     <section class="fruit-section" id="cecropia">
       <h2>Cecropia peltata</h2>
-      <p>Known as the “gummy worm fruit,” with a flavor reminiscent of fig & kiwi.</p>
+      <h3><i>Cecropia peltata</i></h3>
+      <p class="fruit-tagline">“Gummy worm fruit” — playful texture, fig‑and‑kiwi flavor, and a wild architecture.</p>
+      <p>
+        Cecropia is a fast‑growing pioneer tree with a hollow, segmented trunk often inhabited
+        by ants. Its fruit looks like soft, dangling spikes that you can strip and eat like
+        candy. It’s a great example of mutualism (tree + ants) and unusual fruit form.
+      </p>
 
       <div class="dropdown">
-        <div class="dropdown-header">Botanical Details</div>
+        <div class="dropdown-header">Botanical Details <span>Family, structure, mutualism</span></div>
         <div class="dropdown-content">
           <ul>
-            <li>Family: Urticaceae</li>
-            <li>Native to tropical Americas</li>
-            <li>Fast-growing pioneer species</li>
-            <li>Hollow stems often inhabited by ants</li>
+            <li><strong>Family:</strong> Urticaceae.</li>
+            <li><strong>Origin:</strong> Tropical Americas; common in disturbed sites and forest edges.</li>
+            <li><strong>Trunk:</strong> Hollow internodes often occupied by ants that defend the tree.</li>
+            <li><strong>Leaves:</strong> Large, palmately lobed, giving a very distinctive silhouette.</li>
+            <li><strong>Fruit:</strong> Long, soft, finger‑like structures that can be peeled and eaten.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Identification & Ecology <span>Field and ecosystem notes</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Look for <strong>umbrella‑like leaves</strong> and a very open, light‑loving crown.</li>
+            <li>Often one of the first trees to colonize cleared or disturbed land.</li>
+            <li>Ants living in the trunk defend the tree from herbivores — a classic mutualism.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-header">Flavor & Texture <span>Tasting notes</span></div>
+        <div class="dropdown-content">
+          <ul>
+            <li>Flavor is a mix of fig, kiwi, and mild tropical sweetness.</li>
+            <li>Texture is soft and chewy, like natural gummy candy.</li>
+            <li>Usually eaten fresh, by stripping the outer layer and eating the inner pulp.</li>
           </ul>
         </div>
       </div>
@@ -302,13 +626,19 @@
     <!-- QUIZ -->
     <section id="fruit-quiz">
       <h2>🍑 Exotic Fruits Quiz</h2>
+      <p>
+        Quick check: can you connect flavor notes, botanical families, and ID clues back to
+        each fruit? Answer the questions below. After you choose an option, you’ll see the
+        explanation so you can lock the memory in.
+      </p>
       <div id="quiz-container"></div>
-      <button id="startQuizBtn" class="start-btn">Start Quiz</button>
+      <div class="quiz-controls">
+        <button id="startQuizBtn" class="start-btn">Start Quiz</button>
+      </div>
+      <div id="quiz-score" class="quiz-score"></div>
     </section>
 
   </div>
-
-  <script src="/assets/js/exotic-fruits-quiz.js"></script>
 
   <script>
     // 🍑 MENU TOGGLE
@@ -319,11 +649,154 @@
       fruitMenu.classList.toggle("open");
     });
 
+    // Smooth scroll for menu links
+    fruitMenu.querySelectorAll("a[href^='#']").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 20,
+            behavior: "smooth"
+          });
+        }
+        fruitMenu.classList.remove("open");
+      });
+    });
+
     // DROPDOWNS
     document.querySelectorAll(".dropdown-header").forEach(header => {
       header.addEventListener("click", () => {
         header.parentElement.classList.toggle("open");
       });
+    });
+
+    // 🍑 EXOTIC FRUITS QUIZ (self-contained)
+    const quizData = [
+      {
+        question: "Which fruit is often described as tasting like “sweet & cream raspberry cheesecake”?",
+        options: [
+          "Black Sapote",
+          "Red Custard Apple",
+          "Star Apple (Caimito)",
+          "Cecropia peltata"
+        ],
+        answerIndex: 1,
+        explanation: "Red custard apple has a dense, custard-like texture with raspberry and cream notes."
+      },
+      {
+        question: "Which fruit belongs to the Ebenaceae family (persimmon relatives)?",
+        options: [
+          "Black Sapote",
+          "Roxburgh Fig",
+          "Cecropia peltata",
+          "Red Custard Apple"
+        ],
+        answerIndex: 0,
+        explanation: "Black sapote is a Diospyros species in the Ebenaceae family."
+      },
+      {
+        question: "Which fruit shows a star pattern when cut across the equator?",
+        options: [
+          "Star Apple (Caimito)",
+          "Roxburgh Fig",
+          "Cecropia peltata",
+          "Red Custard Apple"
+        ],
+        answerIndex: 0,
+        explanation: "Star apple gets its name from the star-shaped seed pattern inside."
+      },
+      {
+        question: "Which tree is cauliflorous, with fruit growing directly on the trunk?",
+        options: [
+          "Red Custard Apple",
+          "Black Sapote",
+          "Roxburgh Fig",
+          "Cecropia peltata"
+        ],
+        answerIndex: 2,
+        explanation: "Roxburgh fig produces clusters of figs directly on the trunk and main limbs."
+      },
+      {
+        question: "Which species often has hollow stems inhabited by ants as part of a mutualism?",
+        options: [
+          "Cecropia peltata",
+          "Red Custard Apple",
+          "Star Apple (Caimito)",
+          "Black Sapote"
+        ],
+        answerIndex: 0,
+        explanation: "Cecropia peltata has hollow internodes that ants use as housing, defending the tree."
+      }
+    ];
+
+    const quizContainer = document.getElementById("quiz-container");
+    const startQuizBtn = document.getElementById("startQuizBtn");
+    const quizScoreEl = document.getElementById("quiz-score");
+
+    function renderQuiz() {
+      quizContainer.innerHTML = "";
+      quizScoreEl.textContent = "";
+      quizData.forEach((q, index) => {
+        const qDiv = document.createElement("div");
+        qDiv.className = "quiz-question";
+
+        const qTitle = document.createElement("h3");
+        qTitle.textContent = `Q${index + 1}. ${q.question}`;
+        qDiv.appendChild(qTitle);
+
+        const optionsDiv = document.createElement("div");
+        optionsDiv.className = "quiz-options";
+
+        q.options.forEach((opt, optIndex) => {
+          const btn = document.createElement("button");
+          btn.textContent = opt;
+          btn.addEventListener("click", () => handleAnswer(index, optIndex, btn, optionsDiv));
+          optionsDiv.appendChild(btn);
+        });
+
+        const explanation = document.createElement("div");
+        explanation.className = "quiz-explanation";
+        explanation.style.display = "none";
+
+        qDiv.appendChild(optionsDiv);
+        qDiv.appendChild(explanation);
+        quizContainer.appendChild(qDiv);
+      });
+    }
+
+    let score = 0;
+    let answeredCount = 0;
+
+    function handleAnswer(qIndex, optIndex, btn, optionsDiv) {
+      const q = quizData[qIndex];
+      const buttons = optionsDiv.querySelectorAll("button");
+      if ([...buttons].some(b => b.classList.contains("correct") || b.classList.contains("incorrect"))) {
+        return; // already answered
+      }
+
+      if (optIndex === q.answerIndex) {
+        btn.classList.add("correct");
+        score++;
+      } else {
+        btn.classList.add("incorrect");
+        buttons[q.answerIndex].classList.add("correct");
+      }
+
+      const explanation = optionsDiv.nextElementSibling;
+      explanation.textContent = q.explanation;
+      explanation.style.display = "block";
+
+      answeredCount++;
+      quizScoreEl.textContent = `Score: ${score} / ${quizData.length}`;
+    }
+
+    startQuizBtn.addEventListener("click", () => {
+      score = 0;
+      answeredCount = 0;
+      renderQuiz();
+      quizScoreEl.textContent = "";
     });
   </script>
 
