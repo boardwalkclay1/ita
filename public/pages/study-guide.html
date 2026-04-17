@@ -11,7 +11,6 @@
   <style>
     body {
       background: url("/assets/img/ita-index.jpg") center/cover fixed no-repeat;
-      position: relative;
       margin: 0;
     }
 
@@ -110,17 +109,9 @@
       font-size: 15px;
     }
 
-    .glossary-entry {
-      margin-bottom: 10px;
-    }
-
     .glossary-term {
       font-weight: 600;
       color: #ffb347;
-    }
-
-    .quiz-question {
-      margin-bottom: 16px;
     }
 
     .quiz-option {
@@ -172,7 +163,69 @@
         </div>
       </div>
 
-      <!-- (rest of sections will map to modules later) -->
+      <div class="nav-section">
+        <button>🪢 Climbing & Rigging</button>
+        <div class="nav-sub">
+          <button data-module="climb-gear">Gear</button>
+          <button data-module="climb-techniques">Climbing Techniques</button>
+          <button data-module="rigging-systems">Rigging Systems</button>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🪖 Safety</button>
+        <div class="nav-sub">
+          <button data-module="safety-ppe">PPE</button>
+          <button data-module="safety-chainsaw">Chainsaw Safety</button>
+          <button data-module="safety-jobsite">Jobsite Safety</button>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🌳 Tree ID</button>
+        <div class="nav-sub">
+          <button data-module="id-leaves">Leaves</button>
+          <button data-module="id-bark">Bark</button>
+          <button data-module="id-form">Growth Form</button>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🧪 Soil Science</button>
+        <div class="nav-sub">
+          <button data-module="soil-types">Soil Types</button>
+          <button data-module="soil-chem">Chemistry</button>
+          <button data-module="soil-water">Water Movement</button>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>🐛 Pests & Diseases</button>
+        <div class="nav-sub">
+          <button data-module="pests-insects">Insects</button>
+          <button data-module="pests-disease">Diseases</button>
+          <button data-module="pests-management">Management</button>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>⚖️ Risk Assessment</button>
+        <div class="nav-sub">
+          <button data-module="risk-structure">Structural Defects</button>
+          <button data-module="risk-targets">Targets</button>
+          <button data-module="risk-mitigation">Mitigation</button>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <button>📜 Regulations & Ethics</button>
+        <div class="nav-sub">
+          <button data-module="regs-laws">Laws</button>
+          <button data-module="regs-ethics">Ethics</button>
+          <button data-module="regs-best">Best Practices</button>
+        </div>
+      </div>
+
     </aside>
 
     <!-- CONTENT -->
@@ -185,7 +238,7 @@
   </div>
 
   <script src="/assets/js/language.js"></script>
-  <script src="/assets/js/modules/tree-structure.js"></script>
+  <script src="/assets/js/modules/modules-index.js"></script>
   <script src="/assets/js/study-guide.js"></script>
 </body>
 </html>
