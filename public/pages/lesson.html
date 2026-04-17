@@ -10,13 +10,11 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
 
   <style>
-    /* 🌊 Water background */
     body {
       background: url("/assets/img/ita-water.jpg") center/cover no-repeat fixed;
       position: relative;
     }
 
-    /* Soft rose + fruit + water glow overlay */
     body::before {
       content: "";
       position: fixed;
@@ -30,7 +28,6 @@
       z-index: 0;
     }
 
-    /* Glass shell */
     .app-shell {
       backdrop-filter: blur(14px) saturate(1.25);
       background: rgba(10, 20, 15, 0.78);
@@ -39,7 +36,6 @@
       border-radius: 24px;
     }
 
-    /* Bloom glow upgrade */
     .garden-bloom {
       background:
         radial-gradient(circle at 30% 20%, #ff6b9c, transparent 60%),
@@ -47,7 +43,6 @@
       box-shadow: 0 0 16px rgba(255, 107, 156, 0.7);
     }
 
-    /* Lesson title glow */
     #lesson-title {
       background: linear-gradient(135deg, #ff6b9c, #ffb347);
       -webkit-background-clip: text;
@@ -76,7 +71,6 @@
     </header>
 
     <main class="app-content">
-      <!-- LESSON CARD -->
       <section class="card">
         <div class="card-inner">
           <div class="card-title">
@@ -94,7 +88,6 @@
 
           <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;" />
 
-          <!-- QUIZ -->
           <form class="quiz" id="lesson-quiz-form">
             <div class="quiz-question" id="quiz-question"></div>
             <div class="quiz-options" id="quiz-options"></div>
@@ -107,7 +100,6 @@
         </div>
       </section>
 
-      <!-- PROGRESS + NAV -->
       <aside class="card">
         <div class="card-inner progress-card">
           <div class="progress-header">
@@ -144,7 +136,13 @@
   </div>
 
   <script src="/assets/js/language.js"></script>
+
+  <!-- ALL LESSON DATA FILES -->
   <script src="/assets/js/lesson-data.js"></script>
+  <script src="/assets/js/lesson-data2.js"></script>
+  <script src="/assets/js/lesson-data3.js"></script>
+
+  <!-- LESSON ENGINE -->
   <script src="/assets/js/lesson-page.js"></script>
 
   <script>
